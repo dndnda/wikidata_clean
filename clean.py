@@ -109,7 +109,7 @@ def read_process_and_write_json(root_folder, output_file, max_count=1000):
                             try:
                                 json_obj = json.loads(line)
                                 processed_obj = process_json_object(json_obj)
-                                if processed_obj is not None and len(processed_obj['text']) >= 10:
+                                if processed_obj is not None and len(processed_obj['text']) >= 20:
                                     out_f.write(json.dumps(processed_obj, ensure_ascii=False) + '\n')
                                     count += 1
                                     if count >= max_count:
